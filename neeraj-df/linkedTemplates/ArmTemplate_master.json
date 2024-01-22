@@ -1,0 +1,216 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "neeraj-df"
+		},
+		"AmazonS31_secretAccessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS31'"
+		},
+		"AzureBlobStorage1_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage2_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorageDE_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'AzureBlobStorageDE'"
+		},
+		"GoogleCloudStorage1_secretAccessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'secretAccessKey' of 'GoogleCloudStorage1'"
+		},
+		"Microsoft3651_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'Microsoft3651'"
+		},
+		"Sftp1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp1'"
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "AKIAYE64OKLXURKJEFX6"
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://nextthink0neeraj.blob.core.windows.net/"
+		},
+		"AzureBlobStorage1_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "9636baf2-1763-480c-8bb3-5689803dbf04"
+		},
+		"AzureBlobStorage1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"AzureBlobStorage2_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://nextthink0neeraj.blob.core.windows.net/"
+		},
+		"AzureBlobStorage2_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "9636baf2-1763-480c-8bb3-5689803dbf04"
+		},
+		"AzureBlobStorage2_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"AzureBlobStorageDE_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://storagedeneeraj.blob.core.windows.net/"
+		},
+		"AzureBlobStorageDE_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "9636baf2-1763-480c-8bb3-5689803dbf04"
+		},
+		"AzureBlobStorageDE_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://secret-test-account.vault.azure.net/"
+		},
+		"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
+			"type": "string",
+			"defaultValue": "GOOG1EHJSIQKV4UEKNTGU3R2D27PXDT3J4ON3K3P4CCELWCCYHSQCVKXYOSKR"
+		},
+		"Microsoft3651_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "test.rebex.net"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "demo"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "neeraj-df_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AmazonS31_secretAccessKey": {
+						"value": "[parameters('AmazonS31_secretAccessKey')]"
+					},
+					"AzureBlobStorage1_servicePrincipalCredential": {
+						"value": "[parameters('AzureBlobStorage1_servicePrincipalCredential')]"
+					},
+					"AzureBlobStorage2_servicePrincipalCredential": {
+						"value": "[parameters('AzureBlobStorage2_servicePrincipalCredential')]"
+					},
+					"AzureBlobStorageDE_servicePrincipalCredential": {
+						"value": "[parameters('AzureBlobStorageDE_servicePrincipalCredential')]"
+					},
+					"GoogleCloudStorage1_secretAccessKey": {
+						"value": "[parameters('GoogleCloudStorage1_secretAccessKey')]"
+					},
+					"Microsoft3651_servicePrincipalKey": {
+						"value": "[parameters('Microsoft3651_servicePrincipalKey')]"
+					},
+					"Sftp1_password": {
+						"value": "[parameters('Sftp1_password')]"
+					},
+					"AmazonS31_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('AmazonS31_properties_typeProperties_accessKeyId')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_tenant')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureBlobStorage2_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorage2_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureBlobStorage2_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureBlobStorage2_properties_typeProperties_tenant')]"
+					},
+					"AzureBlobStorage2_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureBlobStorage2_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureBlobStorageDE_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorageDE_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureBlobStorageDE_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureBlobStorageDE_properties_typeProperties_tenant')]"
+					},
+					"AzureBlobStorageDE_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureBlobStorageDE_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
+						"value": "[parameters('GoogleCloudStorage1_properties_typeProperties_accessKeyId')]"
+					},
+					"Microsoft3651_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('Microsoft3651_properties_typeProperties_servicePrincipalId')]"
+					},
+					"Sftp1_properties_typeProperties_host": {
+						"value": "[parameters('Sftp1_properties_typeProperties_host')]"
+					},
+					"Sftp1_properties_typeProperties_userName": {
+						"value": "[parameters('Sftp1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "neeraj-df_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'neeraj-df_ArmTemplate_0')]"
+			]
+		}
+	]
+}

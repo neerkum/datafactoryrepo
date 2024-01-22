@@ -1,0 +1,75 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "neeraj-df"
+		},
+		"AmazonS31_secretAccessKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureBlobStorage2_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureBlobStorageDE_servicePrincipalCredential": {
+			"value": ""
+		},
+		"GoogleCloudStorage1_secretAccessKey": {
+			"value": ""
+		},
+		"Microsoft3651_servicePrincipalKey": {
+			"value": ""
+		},
+		"Sftp1_password": {
+			"value": ""
+		},
+		"AmazonS31_properties_typeProperties_accessKeyId": {
+			"value": "AKIAYE64OKLXURKJEFX6"
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"value": "https://nextthink0neeraj.blob.core.windows.net/"
+		},
+		"AzureBlobStorage1_properties_typeProperties_tenant": {
+			"value": "9636baf2-1763-480c-8bb3-5689803dbf04"
+		},
+		"AzureBlobStorage1_properties_typeProperties_servicePrincipalId": {
+			"value": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"AzureBlobStorage2_properties_typeProperties_serviceEndpoint": {
+			"value": "https://nextthink0neeraj.blob.core.windows.net/"
+		},
+		"AzureBlobStorage2_properties_typeProperties_tenant": {
+			"value": "9636baf2-1763-480c-8bb3-5689803dbf04"
+		},
+		"AzureBlobStorage2_properties_typeProperties_servicePrincipalId": {
+			"value": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"AzureBlobStorageDE_properties_typeProperties_serviceEndpoint": {
+			"value": "https://storagedeneeraj.blob.core.windows.net/"
+		},
+		"AzureBlobStorageDE_properties_typeProperties_tenant": {
+			"value": "9636baf2-1763-480c-8bb3-5689803dbf04"
+		},
+		"AzureBlobStorageDE_properties_typeProperties_servicePrincipalId": {
+			"value": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://secret-test-account.vault.azure.net/"
+		},
+		"GoogleCloudStorage1_properties_typeProperties_accessKeyId": {
+			"value": "GOOG1EHJSIQKV4UEKNTGU3R2D27PXDT3J4ON3K3P4CCELWCCYHSQCVKXYOSKR"
+		},
+		"Microsoft3651_properties_typeProperties_servicePrincipalId": {
+			"value": "4c982686-df24-431a-aaa8-54f66276ba46"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"value": "test.rebex.net"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"value": "demo"
+		}
+	}
+}
