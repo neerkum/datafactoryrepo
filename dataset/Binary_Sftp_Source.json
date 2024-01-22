@@ -1,0 +1,21 @@
+{
+	"name": "Binary_Sftp_Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Sftp1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation",
+				"folderPath": "/pub/example"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

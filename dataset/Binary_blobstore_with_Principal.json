@@ -1,0 +1,21 @@
+{
+	"name": "Binary_blobstore_with_Principal",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "testblob1"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

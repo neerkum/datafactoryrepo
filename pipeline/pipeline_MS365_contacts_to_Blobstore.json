@@ -1,0 +1,163 @@
+{
+	"name": "pipeline_MS365_contacts_to_Blobstore",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data from MS365 to Azure BlobStore",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "Office365Source",
+						"outputColumns": [
+							{
+								"name": "assistantName"
+							},
+							{
+								"name": "birthday"
+							},
+							{
+								"name": "businessAddress"
+							},
+							{
+								"name": "businessHomePage"
+							},
+							{
+								"name": "businessPhones"
+							},
+							{
+								"name": "categories"
+							},
+							{
+								"name": "changeKey"
+							},
+							{
+								"name": "children"
+							},
+							{
+								"name": "companyName"
+							},
+							{
+								"name": "createdDateTime"
+							},
+							{
+								"name": "department"
+							},
+							{
+								"name": "displayName"
+							},
+							{
+								"name": "emailAddresses"
+							},
+							{
+								"name": "fileAs"
+							},
+							{
+								"name": "generation"
+							},
+							{
+								"name": "givenName"
+							},
+							{
+								"name": "homeAddress"
+							},
+							{
+								"name": "homePhones"
+							},
+							{
+								"name": "id"
+							},
+							{
+								"name": "imAddresses"
+							},
+							{
+								"name": "initials"
+							},
+							{
+								"name": "jobTitle"
+							},
+							{
+								"name": "lastModifiedDateTime"
+							},
+							{
+								"name": "manager"
+							},
+							{
+								"name": "middleName"
+							},
+							{
+								"name": "mobilePhone"
+							},
+							{
+								"name": "nickName"
+							},
+							{
+								"name": "officeLocation"
+							},
+							{
+								"name": "otherAddress"
+							},
+							{
+								"name": "parentFolderId"
+							},
+							{
+								"name": "personalNotes"
+							},
+							{
+								"name": "profession"
+							},
+							{
+								"name": "spouseName"
+							},
+							{
+								"name": "surname"
+							},
+							{
+								"name": "title"
+							},
+							{
+								"name": "yomiCompanyName"
+							},
+							{
+								"name": "yomiGivenName"
+							},
+							{
+								"name": "yomiSurname"
+							}
+						]
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Microsoft365Table1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "storageaccount_neerajstorage_blobstore",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-12-09T14:53:35Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,47 @@
+{
+	"name": "dataflow_google_cloud",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Delimited_linked_line",
+						"type": "DatasetReference"
+					},
+					"name": "sourcegc",
+					"description": "Import data from delimited_linked_line"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Delimitedfile_sink",
+						"type": "DatasetReference"
+					},
+					"name": "sinkAzureBlob",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureBlobStorageDE",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          eruid as string,",
+				"          description as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false,",
+				"     partitionBy('hash', 1)) ~> sourcegc",
+				"sourcegc sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sinkAzureBlob"
+			]
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"name": "Delimited_linked_line",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GoogleCloudStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "GoogleCloudStorageLocation",
+				"bucketName": "neeraj_private_bucket",
+				"folderPath": "dilimited_files",
+				"fileName": "sample_document.csv"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "eruid",
+				"type": "String"
+			},
+			{
+				"name": "description",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

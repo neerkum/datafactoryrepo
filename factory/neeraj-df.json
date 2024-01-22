@@ -1,0 +1,9 @@
+{
+	"name": "neeraj-df",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a764baa1-349f-4bdf-8cdf-1a0fb390aa2c",
+		"tenantId": "9636baf2-1763-480c-8bb3-5689803dbf04"
+	}
+}

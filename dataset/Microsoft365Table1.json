@@ -1,0 +1,19 @@
+{
+	"name": "Microsoft365Table1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Microsoft3651",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
+		},
+		"annotations": [],
+		"type": "Office365Table",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "BasicDataSet_v0.Contact_v1"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "azure_blobstorage_de2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageDE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destinations"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "blobcontainer-de"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
